@@ -22,6 +22,8 @@ COPY alembic /app/alembic
 COPY alembic.ini /app/alembic.ini
 COPY docs /app/docs
 COPY scripts /app/scripts
+RUN chmod +x /app/scripts/provision_dualsphysics.sh \
+    /app/scripts/start.sh
 
 ARG HYDROSHIELD_AUTO_PROVISION_DUALSPHYSICS=true
 ARG HYDROSHIELD_AUTO_BUILD_DUALSPHYSICS_CPU=true

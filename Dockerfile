@@ -17,6 +17,8 @@ COPY backend/alembic /app/alembic
 COPY backend/alembic.ini /app/alembic.ini
 COPY backend/docs /app/docs
 COPY backend/scripts /app/scripts
+RUN chmod +x /app/scripts/provision_dualsphysics.sh \
+    /app/scripts/start.sh
 ARG HYDROSHIELD_AUTO_PROVISION_DUALSPHYSICS=true
 ENV HYDROSHIELD_DUAL_SPH_BIN_INSTALL_DIR=/opt/dualsphysics/bin \
     LD_LIBRARY_PATH=/opt/dualsphysics/bin \
